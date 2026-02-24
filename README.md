@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# 🚀 Emergence FullStack Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern portfolio web application built using **React + TypeScript + Vite**, powered by **Bun** as the runtime and package manager.
 
-Currently, two official plugins are available:
+This project was developed as part of the Emergence FullStack Assignment and demonstrates frontend development skills using a fast and modern JavaScript stack.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📌 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚛️ React
+- 🟦 TypeScript
+- ⚡ Vite
+- 🥟 Bun (runtime + package manager)
+- 🧹 ESLint
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Before running the project, make sure you have:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Bun (latest version)**
+- **Git**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install Bun
+
+#### macOS / Linux:
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+
+bun --version
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Project setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+git clone https://github.com/Amit4218/Emergence-FullStack-Assignment.git
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+cd Emergence-FullStack-Assignment
+
+bun install
+
+bun dev
+
+```
+
+### Environment Variables
+
+```bash
+cp .env.example .env
+```
+
+### Notes
+
+This project uses Bun instead of npm/yarn for faster dependency management.
+If you prefer npm, you can still run:
+
+```bash
+npm install
+npm run dev
 ```
