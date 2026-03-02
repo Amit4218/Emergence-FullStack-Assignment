@@ -77,7 +77,7 @@ function Chatbot() {
       </Button>
 
       {isOpen && (
-        <div className="absolute bottom-16 right-0 w-80 h-[28rem] bg-background border border-border rounded-xl shadow-xl flex flex-col overflow-hidden">
+        <div className="absolute bottom-16 right-0  h-[28rem] bg-background border border-border rounded-xl shadow-xl flex flex-col overflow-hidden">
           {/* Header */}
           <div className="px-4 py-3 border-b border-border flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold">

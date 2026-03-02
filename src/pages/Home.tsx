@@ -8,6 +8,7 @@ import Projects from "./Projects";
 import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 import { getProjects } from "@/api/projects";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   const languagesImge = [
@@ -17,7 +18,6 @@ function Home() {
   ];
 
   const [project, setProjects] = useState([]);
-  console.log(project);
 
   const { theme } = useTheme();
 
@@ -72,6 +72,18 @@ function Home() {
                 </HoverCard>
               ))}
             </div>
+          </div>
+          <div id="quick_links" className="flex gap-1 lg:hidden">
+            <NavLink
+              to="mailto:amitbhagat621@gmail.com"
+              target="_blank"
+              className="ri-mail-send-line px-2 py-1 text-md rounded hover:bg-secondary"
+            />
+            <NavLink
+              to="https://github.com/Amit4218"
+              target="_blank"
+              className="ri-github-line px-2 py-1 text-md rounded hover:bg-secondary"
+            />
           </div>
           <div className="flex gap-4 mt-3">
             <a href="/resume-amit-bhagat.pdf" download>

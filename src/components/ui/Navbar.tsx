@@ -8,7 +8,7 @@ function navbar() {
   let themeToggleBtn = theme == "dark" ? "ri-moon-fill" : "ri-sun-fill";
 
   return (
-    <nav className="py-3 px-3 flex justify-between items-center">
+    <nav className="py-2 px-10 sm:py-3 sm:px-3 flex justify-between items-center">
       <div id="page_icon" className="text-md sm:text-2xl">
         <NavLink
           to="/"

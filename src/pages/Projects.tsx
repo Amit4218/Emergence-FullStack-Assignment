@@ -82,19 +82,19 @@ function Projects({ project }) {
         <div className="flex gap-5">
           {project.link && (
             <Link to={project.link}>
-              <Label className="ri-global-line text-sm font-bold font-sans text-muted-foreground hover:cursor-pointer">
+              <Label className="ri-global-line text-sm font-bold font-sans  hover:cursor-pointer">
                 live site here
               </Label>
             </Link>
           )}
           <Link to={project.github}>
-            <Label className="ri-github-line text-sm font-bold font-sans text-muted-foreground hover:cursor-pointer">
+            <Label className="ri-github-line text-sm font-bold font-sans  hover:cursor-pointer">
               Source Code
             </Label>
           </Link>
         </div>
 
-        <div className="text-center group-hover:opacity-0 group-hover:hidden w-full transition-all duration-700">
+        <div className="hidden lg:block text-center lg:group-hover:hidden w-full lg:transition-all lg:duration-700">
           <div className="flex justify-center items-center font-semibold text-xs -mb-1">
             <Label className="text-sm text-center">More</Label>
           </div>
@@ -103,13 +103,17 @@ function Projects({ project }) {
 
         <div
           className="
-            max-h-0 
-            opacity-0 
-            group-hover:max-h-[500px] 
-            group-hover:opacity-100 
-            transition-all 
-            duration-700 
-            ease-in-out 
+            max-h-[1000px] 
+            opacity-100 
+
+            lg:max-h-0 
+            lg:opacity-0 
+            lg:group-hover:max-h-[500px] 
+            lg:group-hover:opacity-100 
+            lg:transition-all 
+            lg:duration-700 
+            lg:ease-in-out 
+
             overflow-hidden
             space-y-6
           "
@@ -126,7 +130,7 @@ function Projects({ project }) {
           <div>
             <Label className="text-lg font-semibold">Key Learnings</Label>
             <ol className="mt-3 list-decimal list-inside space-y-2 text-sm text-muted-foreground">
-              {project.learnings.map((val, idx) => (
+              {project.learnings.map((val: string, idx: number) => (
                 <li key={idx}>{val}</li>
               ))}
             </ol>

@@ -1,6 +1,20 @@
+import { sendContactMessage } from "@/api/message";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 
 function Contact() {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
+  const handelSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setEmail("");
+    setName("");
+    setMessage("");
+    await sendContactMessage(name, email, message);
+  };
+
   return (
     <div className="p-2 text-sm leading-relaxed">
       {/* Header */}
@@ -61,15 +75,21 @@ function Contact() {
       <div>
         <Label className="text-2xl font-bold">Send a Message</Label>
 
-        <form className="mt-4 space-y-4 max-w-md">
+        <form onSubmit={handelSubmit} className="mt-4 space-y-4 max-w-md">
           <input
             type="text"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
             placeholder="Your Name"
             className="w-full border-b border-border bg-transparent outline-none py-1 text-sm"
           />
 
           <input
             type="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
             placeholder="Your Email"
             className="w-full border-b border-border bg-transparent outline-none py-1 text-sm"
           />
@@ -77,6 +97,9 @@ function Contact() {
           <textarea
             placeholder="Your Message"
             rows={4}
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
             className="w-full border-b border-border bg-transparent outline-none py-1 text-sm resize-none"
           />
 

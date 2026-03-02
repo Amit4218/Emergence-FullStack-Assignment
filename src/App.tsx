@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="w-1/2 p-1 mb-10">
+      <div className="w-full md:w-[80%] lg:w-1/2 p-1 mb-10">
         <Navbar />
         <AnimatePresence mode="wait">
           <motion.div
